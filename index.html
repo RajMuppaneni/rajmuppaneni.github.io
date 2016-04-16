@@ -1,1 +1,123 @@
-My areas of exploration
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Rajmuppaneni.GitHub.io by RajMuppaneni</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Rajmuppaneni.GitHub.io</h1>
+        <h2>Exploration Unlimited</h2>
+        <a href="https://github.com/RajMuppaneni" class="button"><small>Follow me on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="solr-workspace-setup-windows" class="anchor" href="#solr-workspace-setup-windows" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Solr Workspace Setup Windows</h1>
+
+<h2>
+<a id="prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prerequisites</h2>
+
+<ol>
+<li><a href="https://github.com/">Sign up for Github</a></li>
+<li>Setup <a href="https://help.github.com/articles/set-up-git/">GitHub Desktop</a> or <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git</a>
+</li>
+<li>Apache Ant <a href="http://ant.apache.org/manual/index.html">Install &amp; Setup</a>
+</li>
+<li>Setup <a href="http://ant.apache.org/ivy/history/latest-milestone/tutorial.html">Apache Ivy</a>/<a href="https://maven.apache.org/install.html">Maven</a>
+</li>
+<li>If working from behind a firewall, ensure appropriate proxy settings are in place for Git,Ivy,Maven and Ant.</li>
+<li>Fork <a href="https://github.com/apache/lucene-solr/">lucene-solr</a> repository</li>
+<li>Clone your fork to your file system.</li>
+<li>Eclipse</li>
+<li>Java 1.8+</li>
+</ol>
+
+<h2>
+<a id="my-setup" class="anchor" href="#my-setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>My Setup</h2>
+
+<ol>
+<li>Git</li>
+<li>Apache Ant</li>
+<li>Apache Ivy</li>
+<li>Eclipse</li>
+<li>Java 1.8</li>
+<li>Windows</li>
+</ol>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>Navigate to your file system with the content from your fork.   </p>
+
+<p>lucene/ is a search engine library<br>
+solr/ is a search engine server that uses lucene    </p>
+
+<ol>
+<li>Setup eclipse by running <code>ant eclipse</code>. This will generate the required .project,.classpath and .settings<br>
+</li>
+<li>Ensure the initial and max heap set to a higher number in eclipse.ini<br>
+</li>
+<li>Open eclipse and choose the parent of lucene and solr as workspace location. </li>
+<li>Import &gt; Existing project into workspace <em>(be patient as it takes a while to import and build)</em><br>
+</li>
+</ol>
+
+<h2>
+<a id="debuggersville" class="anchor" href="#debuggersville" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Debuggersville</h2>
+
+<p><strong>Are you puzzled by solr behvior in some case? then this section is for you.</strong></p>
+
+<ol>
+<li> Right click your lucene-solr project and choose <code>Debug As &gt; Debug Configurations</code> </li>
+<li> Under the <code>Remote Java Application</code> category. Click New to create a new debug configuration.<br>
+</li>
+<li> Give it a name your like to use and setup the port that you would like to use for debugging.<br>
+</li>
+<li> You should now be able to set breakpoints throughout the Solr/Lucene code base, step through code, and do all the other fun stuff you can do. </li>
+</ol>
+
+<h2>
+<a id="runningdebug-solr-examples" class="anchor" href="#runningdebug-solr-examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running/Debug Solr Examples</h2>
+
+<ol>
+<li> Navigate to /solr directory on your file system </li>
+<li> Open build.xml and find the target for <code>run-example</code>, ensure the port you choose to debug on is specified in the <code>example.jvm.line</code> property as <code>address</code>.</li>
+<li> If you are looking to debug set system property <code>-Dexample.debug=true</code> to enable JVM debugging. (<em>java -Dexample.debug=true</em>)</li>
+<li> <code>ant run-example</code> <em>(be patient as it takes a while to reveal its magic)</em><br>
+</li>
+<li> In case you are debugging after you see <em>Listening for transport dt_socket at address: {port_number}</em> on the command prompt,switch to eclipse and debug using the configuration we setup earlier.</li>
+<li> You can navigate to solr-webapp @ localhost:8983/solr/# </li>
+</ol>
+
+<h1>
+<a id="have-fun" class="anchor" href="#have-fun" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Have Fun</h1>
+        </section>
+
+        <aside id="sidebar">
+
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
